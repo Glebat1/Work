@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Номер_общежития" Type="nvarchar" MaxLength="50" />
+    <Property Name="Адрес" Type="nvarchar" MaxLength="50" />
+    <Property Name="Индекс" Type="nvarchar" MaxLength="50" />
+    <Property Name="Телефон" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_Заказчик" Type="int" />
+    <Property Name="id_Типа" Type="int" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_Единица_Измерения" Type="int" />
+    <Property Name="Кол_во" Type="int" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Название_Организации" Type="nvarchar(max)" />
+    <Property Name="Адрес" Type="nvarchar(max)" />
+    <Property Name="Индекс" Type="nvarchar(max)" />
+    <Property Name="Телефон" Type="nvarchar(max)" />
+    <Property Name="Эл_Почта" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Имя Роли" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Артикул" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_Поставщика" Type="int" />
+    <Property Name="id_Типа" Type="int" />
+    <Property Name="id_Товарной_накладной" Type="int" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_Ед_измерения" Type="int" />
+    <Property Name="На_Складе" Type="int" />
+    <Property Name="Минимальный_запас" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StorageType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Название" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Товарной_накладной" Type="int" Nullable="false" />
+    <Property Name="Дата" Type="date" />
+    <Property Name="Поставщик" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TowarNakl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Номер_документа" Type="nvarchar" MaxLength="50" />
+    <Property Name="Дата" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Название" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ИмяПользователя" Type="nvarchar" MaxLength="50" />
+    <Property Name="Логин" Type="nvarchar" MaxLength="50" />
+    <Property Name="Пароль" Type="nvarchar" MaxLength="50" />
+    <Property Name="id Роли" Type="int" />
+  </EntityType>
+  <EntityType Name="VozvrNakl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="id Организации" Type="int" />
+    <Property Name="Нарушение" Type="nvarchar" MaxLength="50" />
+    <Property Name="Дата" Type="date" />
+    <Property Name="id Товарной накладной" Type="int" />
+  </EntityType>
+  <Association Name="FK_Order1_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Order1" Type="Self.Order1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order1">
+        <PropertyRef Name="id_Заказчик" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order1_StorageType">
+    <End Role="StorageType" Type="Self.StorageType" Multiplicity="0..1" />
+    <End Role="Order1" Type="Self.Order1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StorageType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order1">
+        <PropertyRef Name="id_Типа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order1_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="Order1" Type="Self.Order1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order1">
+        <PropertyRef Name="id_Единица_Измерения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="id_Поставщика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_StorageType">
+    <End Role="StorageType" Type="Self.StorageType" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StorageType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="id_Типа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_TowarNakl">
+    <End Role="TowarNakl" Type="Self.TowarNakl" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TowarNakl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="id_Товарной_накладной" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="id_Ед_измерения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="Поставщик" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_TowarNakl">
+    <End Role="TowarNakl" Type="Self.TowarNakl" Multiplicity="1" />
+    <End Role="Supply" Type="Self.Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TowarNakl">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="ID_Товарной_накладной" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id Роли" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VozvrNakl_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="VozvrNakl" Type="Self.VozvrNakl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VozvrNakl">
+        <PropertyRef Name="id Организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order1" EntityType="Self.Order1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StorageType" EntityType="Self.StorageType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply" EntityType="Self.Supply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TowarNakl" EntityType="Self.TowarNakl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VozvrNakl" EntityType="Self.VozvrNakl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Order1_Client" Association="Self.FK_Order1_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Order1" EntitySet="Order1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order1_StorageType" Association="Self.FK_Order1_StorageType">
+      <End Role="StorageType" EntitySet="StorageType" />
+      <End Role="Order1" EntitySet="Order1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order1_Unit" Association="Self.FK_Order1_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Order1" EntitySet="Order1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Provider" Association="Self.FK_Storage_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_StorageType" Association="Self.FK_Storage_StorageType">
+      <End Role="StorageType" EntitySet="StorageType" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_TowarNakl" Association="Self.FK_Storage_TowarNakl">
+      <End Role="TowarNakl" EntitySet="TowarNakl" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Unit" Association="Self.FK_Storage_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_Provider" Association="Self.FK_Supply_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_TowarNakl" Association="Self.FK_Supply_TowarNakl">
+      <End Role="TowarNakl" EntitySet="TowarNakl" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VozvrNakl_Provider" Association="Self.FK_VozvrNakl_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="VozvrNakl" EntitySet="VozvrNakl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

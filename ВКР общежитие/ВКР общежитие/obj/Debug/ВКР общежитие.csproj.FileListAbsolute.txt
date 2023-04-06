@@ -1,0 +1,53 @@
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.csprojAssemblyReference.cache
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddSklad.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Login.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\MainWindow.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Perehod.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Sklad.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\App.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие_Content.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие_MarkupCompile.cache
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие_MarkupCompile.lref
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Zakaz.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\ВКР общежитие.exe.config
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\ВКР общежитие.exe
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\ВКР общежитие.pdb
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\EntityFramework.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\EntityFramework.xml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddSklad.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Login.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\MainWindow.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Perehod.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Sklad.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Zakaz.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.g.resources
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР_общежитие.Properties.Resources.resources
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.csproj.GenerateResource.cache
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.csproj.CoreCompileInputs.cache
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.csproj.CopyComplete
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.exe
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.pdb
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddProvider.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Provider11.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddProvider.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Provider11.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddSupply.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Supply1.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddSupply.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\PapkaAdmin\Supply1.baml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\ВКР общежитие.csproj.ResolveComReference.cache
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialSkin.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialDesignColors.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddZakaz.g.cs
+C:\Users\Глебати\source\repos\ВКР общежитие\ВКР общежитие\obj\Debug\Add\AddZakaz.baml

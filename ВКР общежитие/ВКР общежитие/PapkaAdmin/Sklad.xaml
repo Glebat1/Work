@@ -1,0 +1,153 @@
+﻿<Page x:Class="ВКР_общежитие.PapkaAdmin.Sklad"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ВКР_общежитие.PapkaAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1200" IsVisibleChanged="Page_IsVisibleChanged"
+      Title="Sklad">
+    <StackPanel Background="#FF8C94" Orientation="Vertical"  >
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Background="#DCEDC2" Height="60">
+            <Label Content="Склад" FontSize="30" Margin="500 0 0 0"/>
+        </StackPanel>
+        
+        <StackPanel Background="#FFB2BA" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="1200" Height="60">
+            <Label Content="Поиск по названию:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="252,0,0,0" />
+            <TextBox x:Name="Poisk" Width="150" Height="40" Margin="0 0 0 0"  TextChanged="Poisk_TextChanged_1"   />
+            <Label Content="Фильтр:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" />
+
+            <ComboBox Name="CmbFiltr" Width="100" Height="40" Margin="15 0 15 0" SelectionChanged="CmbFiltr_SelectionChanged">
+
+            </ComboBox>
+            <Button Content="Удалить" Background="#DCEDC2" HorizontalAlignment="Right"  Margin="10" VerticalAlignment="Stretch" Width="104" Height="40" Click="Button_Click_1" FontSize="20"/>
+            <Button Content="Добавить" Background="#DCEDC2" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Stretch" Width="104" Height="40" Click="Button_Click" FontSize="20"/>
+            <Button Content="Excel" Background="#DCEDC2" HorizontalAlignment="Right" Margin="10" Width="104" Click="Button_Click2" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Background="#FF8C94" HorizontalAlignment="Left" Margin="0,0,0,0" Height="390" Width="1200" >
+            <Button Content="Склад" Background="#DCEDC2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0" Width="120" Height="50" Click="Button_Click_Sklad" FontSize="20"/>
+            <Button Content="Поставщики" Background="#DCEDC2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0" Width="120" Height="50" Click="Button_Click_Post" FontSize="20"/>
+            <Button Content="Поставки" Background="#DCEDC2" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="10 10 0 0" Width="120" Height="50" Click="Button_Click_Supply" FontSize="20"/>
+            <Button Content="Заказы" Background="#DCEDC2" HorizontalAlignment="Left" Margin="10 10 0 0" VerticalAlignment="Center" Width="120" Height="50" Click="Button_Click_Zakaz" FontSize="20"/>
+            <Button Content="Выход" Background="#DCEDC2" HorizontalAlignment="Left" Margin="10 40 0 0" VerticalAlignment="Center" Width="120" Height="50" Click="Button_Click_Exit" FontSize="20"/>
+
+            
+            <StackPanel Orientation="Horizontal" Margin="580,0,0,0"/>
+            <StackPanel Orientation="Horizontal"/>
+        </StackPanel>
+        <DataGrid Name="DG" AutoGenerateColumns="False"   VerticalScrollBarVisibility="Auto" FontWeight="Bold" FontStyle="Italic" Margin="140,-440,0,0"  Height="340" >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                Binding="{Binding Артикул}" 
+                Width="*"
+                Header="Артикул" />
+
+                <DataGridTextColumn 
+                Binding="{Binding Provider.Название_Организации}"
+                Width="*"
+                Header="Поставщик"/>
+
+                <DataGridTextColumn
+                Binding="{Binding StorageType.Название}"
+                Width="*"
+                Header="Тип"/>
+                <DataGridTextColumn
+                Binding="{Binding TowarNakl.Номер_документа}"
+                Width="*"
+                Header="Тов. накладная"/>
+                <DataGridTextColumn
+                Binding="{Binding Наименование}" 
+                Width="*"
+                Header="Наименование"/>
+                <DataGridTextColumn
+                Binding="{Binding Unit.Название}" 
+                Width="*"
+                Header="Ед. измерения"/>
+                <DataGridTextColumn
+                Binding="{Binding На_Складе}" 
+                Width="*"
+                Header="Кол-во"/>
+                <DataGridTextColumn
+                Binding="{Binding Минимальный_запас}" 
+                Width="*"
+                Header="Мин. запас"/>
+                <DataGridTemplateColumn Width="130" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Name="BtnRed" Click="BtnRed_Click" Content="Редактирование" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        
+    </StackPanel>
+
+    <!--<StackPanel Orientation="Vertical" Background="#DCEDC2">
+        <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Right" Width="720" >
+            <Label Content="Поиск по названию:" FontSize="15" />
+
+            <TextBox x:Name="Poisk" Width="150" Height="40" Margin="0 0 4 0"  TextChanged="Poisk_TextChanged_1"   />
+            -->
+    <!--<Button Content="Обновить" Background="#EEEEEE" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="104" Height="40" Click="Button_Click_4" FontSize="20"/>-->
+    <!--
+            <Button Content="Удалить" Background="#EEEEEE" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="104" Height="40" Click="Button_Click_1" FontSize="20"/>
+            <Button Content="Добавить" Background="#EEEEEE" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="104" Height="40" Click="Button_Click" FontSize="20"/>
+            <Button Content="Exel" Background="#EEEEEE" HorizontalAlignment="Right" Width="104" Click="Button_Click2" FontSize="20"/>
+            <Button Content="Назад" Background="#EEEEEE" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="104" Height="40" Click="Button_Click3" FontSize="20"/>
+        </StackPanel>
+        <StackPanel>
+
+            <DataGrid Background="#FF8C94" Name="DG" AutoGenerateColumns="False"  VerticalScrollBarVisibility="Auto" Height="950" >
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn
+                Binding="{Binding Артикул}" 
+                Width="*"
+                Header="Артикул" />
+
+                    <DataGridTextColumn 
+                Binding="{Binding Provider.Название_Организации}"
+                Width="*"
+                Header="Поставщик"/>
+
+                    <DataGridTextColumn
+                Binding="{Binding StorageType.Название}"
+                Width="*"
+                Header="Тип"/>
+                    <DataGridTextColumn
+                Binding="{Binding TowarNakl.Номер_документа}"
+                Width="*"
+                Header="Тов. накладная"/>
+                    <DataGridTextColumn
+                Binding="{Binding Наименование}" 
+                Width="*"
+                Header="Наименование"/>
+                    <DataGridTextColumn
+                Binding="{Binding Unit.Название}" 
+                Width="*"
+                Header="Ед. измерения"/>
+                    <DataGridTextColumn
+                Binding="{Binding На_Складе}" 
+                Width="*"
+                Header="Кол-во"/>
+                    <DataGridTextColumn
+                Binding="{Binding Минимальный_запас}" 
+                Width="*"
+                Header="Мин. запас"/>
+                    <DataGridTemplateColumn Width="130" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button  Name="BtnRed" Click="BtnRed_Click" Content="Редактирование" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+
+        </StackPanel>
+    </StackPanel>-->
+</Page>
